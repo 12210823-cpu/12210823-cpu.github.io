@@ -1,0 +1,11 @@
+.works {
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.work-item img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
