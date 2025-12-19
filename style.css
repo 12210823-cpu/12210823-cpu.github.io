@@ -1,52 +1,77 @@
 body {
     color: #333;
     font-family: sans-serif;
-    background-color: #ccc;
+    background-color: #8eaebd;
     margin: 0%;
 }
 
+.about {
+    display: flex;
+    border-bottom: 2px solid #2c2a2a;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+}
+
+.left {
+    flex-basis: 60%;
+}
+
+.right {
+    flex-basis: 40%;
+}
+
+.button {
+    display: flex;
+}
+
 .container {
-    width: 500px;
+    width: 700px;
     margin: 50px auto;
 }
 
 .name {
-    text-align: center;
+    text-align: left;
     color: #333;
 
-    border: 3px solid #ccc;
+    /* border: 3px solid #ccc; 文字邊框
 
-    padding: 20px;
-    margin: 50px;
+    padding: 10px;
+    margin: 100 50 50px;
     border-radius: 50px;
+    inset: 50 100 50 50px; */
 }
 
 .community {
     text-align: center;
     color: #2c2a2a;
-    font-size: 18px;
+    font-size: 15px;
     border: 1px solid #925e5e;
     padding: 1px;
     margin: 2px;
     /* 簡碼 margin: 上 右 下 左 or 上 左右 下 */
     margin-top: 10px;
     border-radius: 50px;
+    flex-basis: 50%;
 }
-
+.community p {
+    margin: 10px 0 ;
+}
 .photo img {
     max-width: 100%;
     height: auto;
 }
 
+
 .photo img:hover {
     filter: grayscale(100%);
+    inset: 30%, 15 15 15 15;
 }
 
 .photo {
-    width: 160px;
-    margin: 0 auto 50px;
+    width: 200px;
     overflow: hidden;
     border-radius: 50%;
+    margin-left: auto;
 }
 
 .top {
@@ -66,17 +91,52 @@ body {
     justify-content: space-between;
     align-items: stretch; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-areas: 
+    'w1 w1 w2 w7'
+    'w1 w1 w3 w8'
+    'w4 w5 w6 w9'
+    ;
+    margin-top: 30px;
+    gap: 5px;
 }
-
+.item-1 {
+grid-area: w1;
+}
+.item-2 {
+grid-area: w2;
+}
+.item-3 {
+grid-area: w3;
+}
+.item-4 {
+grid-area: w4;
+}
+.item-5 {
+grid-area: w5;
+}
+.item-6 {
+grid-area: w6;
+}
+.item-7 {
+grid-area: w7;
+}
+.item-8 {
+grid-area: w8;
+}
+.item-9 {
+grid-area: w9;
+}
 .work-item {
-    flex: shrink 0;
-    flex-basis: 33.333%;
+display: flex;
+align-items: end;
     /* border: 1px solid #000; */
     padding: 5px;
     box-sizing: border-box;
 }
-
+.work-item p {
+    margin: 0;
+}
 /* .works {
     display: flex;
     flex-wrap: wrap;
@@ -87,4 +147,23 @@ body {
     height: auto;
     aspect-ratio: 1;
     object-fit: cover;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.works{
+    opacity: 0;
+    animation: fadeInUp 0.9s ease-out 0.2s forwards;
+}
+
+.colorblock {
+    color: #ff891b;
 }
